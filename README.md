@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BizValidator — AIビジネス検証ツール
 
-## Getting Started
+**アイデアを3行入力するだけで、30秒後に起業家向け事業検証ドキュメントが完成します。**
 
-First, run the development server:
+🔗 **デモ：** https://biz-validator.vercel.app
+
+---
+
+## できること
+
+入力するのはたった3つ：
+- ターゲット層
+- 解決したい課題
+- コアアイデア
+
+Claude AIが以下の6つを自動生成します：
+
+| セクション | 内容 |
+|---|---|
+| リーンキャンバス | UVP・収益モデル・KPI含む9項目 |
+| ペルソナ設計 | 日本語・実名形式の顧客像 |
+| 競合分析 | ジャンル自動判定 + 実在する競合3社 |
+| バリュープロポジションキャンバス | 顧客課題と自社機能のマッピング |
+| AIプロンプト集 | MVP定義・LP・ピッチ等6種のコピペ用プロンプト |
+| AIアドバイザーチャット | 検証データをコンテキストに持ったビジネス相談AI |
+
+---
+
+## 技術スタック
+
+- **フロントエンド：** Next.js 16 + TypeScript + Tailwind CSS v4
+- **AI：** Claude Haiku 4.5（Anthropic SDK）
+- **デプロイ：** Vercel
+- **フォールバック：** APIキーなしでもローカルエンジンで動作
+
+---
+
+## セットアップ
+
+```bash
+git clone https://github.com/fair789/biz-validator.git
+cd biz-validator
+npm install
+```
+
+`.env.local` を作成：
+
+```env
+ANTHROPIC_API_KEY=your_api_key_here
+```
+
+APIキーは https://console.anthropic.com/settings/keys から取得。  
+未設定でもローカルエンジンで動作します。
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 にアクセス。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 作者
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Fair** — 都内大学2年生・個人開発者  
+X: [@fair789](https://x.com/fair789)
